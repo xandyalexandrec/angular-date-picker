@@ -157,7 +157,7 @@ angular.module('mp.datePicker', []);
 
                         $scope.leadingDays = days.slice(- leadingDays - (31 - daysInLastMonth), daysInLastMonth);
                         $scope.days = days.slice(0, daysInMonth);
-                        $scope.week = 1
+                        $scope.week = Math.ceil(($scope.selectedDay + $scope.leadingDays.length) / 7)
 
                         // Ensure a total of 6 rows to maintain height consistency
                         $scope.trailingDays = days.slice(0, 6 * 7 - (leadingDays + daysInMonth));
